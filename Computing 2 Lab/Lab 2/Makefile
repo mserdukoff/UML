@@ -1,0 +1,6 @@
+string_driver: main.o my_string.o
+	gcc -Wall --std=c99 -o string_driver main.o my_string.o
+my_string.o: my_string.h my_string.c
+	gcc -Wall --std=c99 -c my_string.c -o my_string.o
+clean:
+	rm string_driver main.o

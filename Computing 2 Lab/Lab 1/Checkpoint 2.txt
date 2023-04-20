@@ -1,0 +1,49 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+
+	int row; //row
+	int collumn; //collumn
+
+	row = 20;
+	collumn = 30;
+
+	int* array = (int*)malloc(row * collumn * sizeof(int));
+
+	int i; //counter variables
+	int j;
+
+	printf("Hello World! I have created a dynamic 2D array of 20 by 30 integers!\n");
+
+	for (i = 0; i < row; i++) {
+		
+		for (j = 0; j < collumn; j++) {
+			
+			*(array + i * collumn + j) = i + j;
+
+		}
+	}
+	
+	for (i = 0; i < row; i++) { //printing
+
+		for (j = 0; j < collumn; j++) {
+
+			if (*(array + i * collumn + j) <= 9) {
+
+				printf(" %2d", *(array + i * collumn + j));
+
+			}
+			else {
+
+				printf(" %2d", *(array + i * collumn + j));
+
+			}
+		}
+
+		printf("\n"); //next line after each iteration
+	}
+	
+	free(array);
+	return 0;
+}
